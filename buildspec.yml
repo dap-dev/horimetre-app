@@ -9,7 +9,7 @@ phases:
       # Upgrade AWS CLI to the latest version
       - pip install --upgrade awscli
 
-      -npm run build
+      - npm run build
   build:
     commands:
       # Use AWS SAM to package the application by using AWS CloudFormation
