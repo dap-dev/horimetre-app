@@ -9,9 +9,9 @@ phases:
       # Upgrade AWS CLI to the latest version
       - pip install --upgrade awscli
 
-      - npm run build
   build:
     commands:
+      - npm run build
       # Use AWS SAM to package the application by using AWS CloudFormation
       - aws s3 cp --recursive build/ s3://$WEBSITE_S3_BUCKET/public/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
       - sed -i -e "s|static/|$WEBSITE_S3_PREFIX/public/static/|g" build/index.html
